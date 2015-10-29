@@ -56,7 +56,7 @@ RUN cd /tmp; \
 
 # Install php packages.
 RUN apt-get update
-RUN apt-get -y -f install php5-cli php5-dev php5-curl curl php-pear ant
+RUN apt-get -y -f install php5-cli php5-dev php5-curl php5-mysql curl php-pear ant
 
 # Install php xdebug extension for code coverage
 # Setup the Xdebug version to install
