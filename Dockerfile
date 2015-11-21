@@ -28,7 +28,9 @@ RUN curl -L https://updates.jenkins-ci.org/latest/checkstyle.hpi -o /tmp/WEB-INF
   curl -L https://updates.jenkins-ci.org/latest/workflow-aggregator.hpi -o /tmp/WEB-INF/plugins/workflow-aggregator.hpi && \
   curl -L https://updates.jenkins-ci.org/latest/ansicolor.hpi -o /tmp/WEB-INF/plugins/ansicolor.hpi && \
   curl -L https://updates.jenkins-ci.org/latest/gradle.hpi -o /tmp/WEB-INF/plugins/gradle.hpi && \
-  curl -L https://updates.jenkins-ci.org/latest/deploy.hpi -o /tmp/WEB-INF/plugins/deploy.hpi
+  curl -L https://updates.jenkins-ci.org/latest/deploy.hpi -o /tmp/WEB-INF/plugins/deploy.hpi && \
+  curl -L https://updates.jenkins-ci.org/latest/findbugs.hpi -o /tmp/WEB-INF/plugins/findbugs.hpi && \
+  curl -L https://updates.jenkins-ci.org/latest/analysis-core.hpi -o /tmp/WEB-INF/plugins/analysis-core.hpi
 
 # Install Docker plugin for docker deploy.
 RUN curl -L https://updates.jenkins-ci.org/latest/docker-build-publish.hpi -o /tmp/WEB-INF/plugins/docker-build-publish.hpi
@@ -56,7 +58,9 @@ RUN cd /tmp; \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/workflow-aggregator.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/ansicolor.hpi && \
   zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/gradle.hpi && \
-  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/deploy.hpi
+  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/deploy.hpi && \
+  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/findbugs.hpi && \
+  zip --grow /usr/share/jenkins/jenkins.war WEB-INF/plugins/analysis-core.hpi
 
 # Install php packages.
 RUN apt-get update
